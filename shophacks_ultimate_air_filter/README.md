@@ -27,3 +27,7 @@ Note that there are some details, like corner radii, that are not present in the
 
 1. These drawings assume a 21-5/8" diameter for the fan. Check that that's correct for yours.
 2. Fan clip holes aren't pre-drilled, as that would require flipping the setup for features with completely non-critical locations.
+
+## Workflow
+
+I'm making these on the CNC at the local makerspace that runs Mach3. Most folks use Vectric VCarve Pro 11 (makerspace license) for CAM, some use Fusion360. My original design is in OpenSCAD.

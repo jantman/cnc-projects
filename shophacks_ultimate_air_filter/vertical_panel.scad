@@ -16,7 +16,7 @@ union() {
         translate([3.5, 20.25, 0]) { rotate([0, 0, -90]) { slot(); }}
         translate([11.5, 20.25, 0]) { rotate([0, 0, -90]) { slot(); }}
         translate([19.5, 20.25, 0]) { rotate([0, 0, -90]) { slot(); }}
-        // right side slots, botton to top
+        // right side slots, bottom to top
         translate([25, 3.25, thickness]) { rotate([0, 180, 0]) { slot(); }}
         translate([25, 13.25, thickness]) { rotate([0, 180, 0]) { slot(); }}
     }
