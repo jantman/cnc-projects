@@ -31,3 +31,10 @@ Note that there are some details, like corner radii, that are not present in the
 ## Workflow
 
 I'm making these on the CNC at the local makerspace that runs Mach3. Most folks use Vectric VCarve Pro 11 (makerspace license) for CAM, some use Fusion360. My original design is in OpenSCAD.
+
+## Hardware
+
+I cut these on the 48x52" [Joe's CNC Evolution](https://www.joescnc.com/the-machines/evolution-page) at [Decatur Makers](https://decaturmakers.org/), controlled by Mach 3. Tools used:
+
+* 1/4" (0.25") carbide end mill, 0.125" pass depth, 0.1" 40% stepover, 12,000 RPM spindle, 100 in/min feed, 30 in/min plunge.
+* 3/16" (0.1875") carbide end mill, 0.09375" pass depth, 0.085" 50% stepover, 12,000 RPM spindle, 100 in/min feed, 20 in/min plunge.
