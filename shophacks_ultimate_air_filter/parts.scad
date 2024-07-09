@@ -5,29 +5,26 @@ use <my_roundedcube.scad>;
 function inch(x) = x * 25.4;
 
 module front_panel() {
-    thickness = inch(0.758);
-    slot_inset = inch(13.0 / 16.0); // 0.8125
-    slot_width = inch(11.0 / 32.0); // 0.34375
-    slot_depth = inch(0.375);
-    translate([0, 0, -1 * thickness]) { // set the top face of the part to Z=0 for easier CAM
+    include <variables.scad>;
+    translate([0, 0, -1 * front_thickness]) { // set the top face of the part to Z=0 for easier CAM
         difference() {
-            my_roundedcube(inch(27), inch(27), thickness, inch(1));
+            my_roundedcube(front_x, front_y, front_thickness, inch(1));
             // center hole
-            translate([inch(27.0 / 2.0), inch(27.0 / 2.0), inch(-5)]) { cylinder(d=inch(21.675), h=inch(10)); }
+            translate([front_x / 2, front_y / 2, inch(-5)]) { cylinder(d=front_hole_diam, h=inch(10)); }
             // bottom through slot
-            translate([inch(-1), slot_inset, thickness - slot_depth]) {
+            translate([inch(-1), slot_inset, front_thickness - slot_depth]) {
                 cube([inch(29), slot_width, slot_depth + 1]);
             }
             // top through slot
-            translate([inch(-1), inch(27) - (slot_inset + slot_width), thickness - slot_depth]) {
+            translate([inch(-1), front_y - (slot_inset + slot_width), front_thickness - slot_depth]) {
                 cube([inch(29), slot_width, slot_depth + 1]);
             }
             // left stopped slot
-            translate([slot_inset, slot_inset + slot_width - 0.1, thickness - slot_depth]) {
+            translate([slot_inset, slot_inset + slot_width - 0.1, front_thickness - slot_depth]) {
                 cube([slot_width, inch(24 + (21.0 / 32.0) + 0.05), slot_depth + 1]);
             }
             // right stopped slot
-            translate([inch(27) - (slot_inset + slot_width), slot_inset + slot_width - 0.1, thickness - slot_depth]) {
+            translate([front_x - (slot_inset + slot_width), slot_inset + slot_width - 0.1, front_thickness - slot_depth]) {
                 cube([slot_width, inch(24 + (21.0 / 32.0) + 0.05), slot_depth + 1]);
             }
         }
@@ -35,9 +32,7 @@ module front_panel() {
 }
 
 module tab(thickness) {
-    twidth = inch(4);
-    tdepth = inch(1.125);
-    tradius = inch(1.125/3.0);
+    include <variables.scad>;
     translate([0, 0, inch(-0.5)]) {
         intersection() {
             translate([-1 * tdepth, 0, 0]) {
@@ -51,11 +46,11 @@ module tab(thickness) {
 }
 
 module horizontal_panel() {
-    thickness = inch(0.25);
+    include <variables.scad>;
     translate([0, 0, -1 * thickness]) { // set the top face of the part to Z=0 for easier CAM
         union() {
             difference() {
-                cube([inch(24.75), inch(20.125), thickness]);
+                cube([horiz_x, horiz_y, thickness]);
                 translate([inch(1.25), inch(1.625), inch(-0.1)]) {
                     my_roundedcube(inch(22.25), inch(17.25), inch(1), inch(1.25));
                 }
@@ -64,12 +59,12 @@ module horizontal_panel() {
             translate([0, inch(3.25), 0]) { tab(thickness); }
             translate([0, inch(13.25), 0]) { tab(thickness); }
             // top side tabs, left to right
-            translate([inch(2.375), inch(20.125), 0]) { rotate([0, 0, -90]) { tab(thickness); }}
-            translate([inch(10.375), inch(20.125), 0]) { rotate([0, 0, -90]) { tab(thickness); }}
-            translate([inch(18.375), inch(20.125), 0]) { rotate([0, 0, -90]) { tab(thickness); }}
+            translate([inch(2.375), horiz_y, 0]) { rotate([0, 0, -90]) { tab(thickness); }}
+            translate([inch(10.375), horiz_y, 0]) { rotate([0, 0, -90]) { tab(thickness); }}
+            translate([inch(18.375), horiz_y, 0]) { rotate([0, 0, -90]) { tab(thickness); }}
             // right side tabs, botton to top
-            translate([inch(24.75), inch(3.25), thickness]) { rotate([0, 180, 0]) { tab(thickness); }}
-            translate([inch(24.75), inch(13.25), thickness]) { rotate([0, 180, 0]) { tab(thickness); }}
+            translate([horiz_x, inch(3.25), thickness]) { rotate([0, 180, 0]) { tab(thickness); }}
+            translate([horiz_x, inch(13.25), thickness]) { rotate([0, 180, 0]) { tab(thickness); }}
         }
     }
 }
@@ -87,11 +82,11 @@ module slot(thickness) {
 }
 
 module vertical_panel() {
-    thickness = inch(0.25);
+    include <variables.scad>;
     translate([0, 0, -1 * thickness]) { // set the top face of the part to Z=0 for easier CAM
         union() {
             difference() {
-                cube([inch(26), inch(21.25), thickness]);
+                cube([vert_x, vert_y, thickness]);
                 translate([inch(2.375), inch(1.625), inch(-0.1)]) {
                     my_roundedcube(inch(21.25), inch(17.25), inch(1), inch(1.25));
                 }
@@ -111,7 +106,7 @@ module vertical_panel() {
 }
 
 module rear_panel() {
-thickness = inch(0.25);
+    include <variables.scad>;
     translate([0, 0, -1 * thickness]) { // set the top face of the part to Z=0 for easier CAM
         union() {
             difference() {
