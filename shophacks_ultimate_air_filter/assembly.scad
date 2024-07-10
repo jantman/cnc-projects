@@ -20,12 +20,12 @@ translate([(front_x - (slot_inset + slot_width)) + thickness + ((slot_width - th
 }
 
 // !!! these are really vertical not horizontal
-translate([slot_width / 2, slot_depth, slot_inset]) {
+translate([0, slot_depth, slot_inset]) {
     rotate([180, 0, 0]) {
         color("red") { vertical_panel(); }
     }
 }
-translate([slot_width / 2, slot_depth, slot_inset + inch(24.75) + thickness]) {
+translate([0, slot_depth, slot_inset + inch(24.75) + thickness]) {
     rotate([180, 0, 0]) {
         color("red") { vertical_panel(); }
     }
@@ -36,3 +36,5 @@ translate([0, -1 * horiz_y, tdepth]) {
         rear_panel();
     }
 }
+
+// @TODO NOTE - maybe I have horizontal and vertical swapped???

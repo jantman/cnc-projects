@@ -98,8 +98,8 @@ module vertical_panel() {
                 translate([inch(11.5), inch(20.25), 0]) { rotate([0, 0, -90]) { slot(thickness); }}
                 translate([inch(19.5), inch(20.25), 0]) { rotate([0, 0, -90]) { slot(thickness); }}
                 // right side slots, bottom to top
-                translate([inch(25), inch(3.25), thickness]) { rotate([0, 180, 0]) { slot(thickness); }}
-                translate([inch(25), inch(13.25), thickness]) { rotate([0, 180, 0]) { slot(thickness); }}
+                translate([inch(26), inch(3.25), thickness]) { rotate([0, 180, 0]) { slot(thickness); }}
+                translate([inch(26), inch(13.25), thickness]) { rotate([0, 180, 0]) { slot(thickness); }}
             }
         }
     }

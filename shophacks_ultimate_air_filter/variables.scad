@@ -19,5 +19,5 @@ horiz_x = inch(24.75);
 horiz_y = inch(20.125);
 
 // vertical panel
-vert_x = inch(26);
+vert_x = inch(27);
 vert_y = inch(21.25);
