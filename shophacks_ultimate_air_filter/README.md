@@ -30,7 +30,7 @@ Note that there are some details, like corner radii, that are not present in the
 
 ## Workflow
 
-I'm making these on the CNC at the local makerspace that runs Mach3. Most folks use Vectric VCarve Pro 11 (makerspace license) for CAM, some use Fusion360. My original design is in OpenSCAD.
+I'm making these on the CNC at the local makerspace that runs Mach3. Most folks use Vectric VCarve Pro 11 (makerspace license) for CAM, some use Fusion360. My original design is in OpenSCAD and I used FreeCAD for the CAM portion. You can see some notes on the CAM work in [freecad_notes.md](freecad_notes.md).
 
 ## Hardware
 
@@ -38,3 +38,10 @@ I cut these on the 48x52" [Joe's CNC Evolution](https://www.joescnc.com/the-mach
 
 * 1/4" (0.25") carbide end mill, 0.125" pass depth, 0.1" 40% stepover, 12,000 RPM spindle, 100 in/min feed, 30 in/min plunge.
 * 3/16" (0.1875") carbide end mill, 0.09375" pass depth, 0.085" 50% stepover, 12,000 RPM spindle, 100 in/min feed, 20 in/min plunge.
+
+### Cut List
+
+* [front_panel.gcode](front_panel.gcode) 1 part on a 29x48" piece of 3/4" particle board. Cycle time 19 minutes 25 seconds.
+* [vertical_panel.gcode](vertical_panel.gcode) 2 parts on a 30x60" piece of 1/4" baltic birch plywood, as separate setups. Cycle time 2 minutes 32 seconds each.
+* [horizontal_panel.gcode](horizontal_panel.gcode) 2 parts on a 30x60" piece of 1/4" baltic birch plywood, as separate setups. Cycle time 1 minute 49 seconds each.
+* [rear_panel.gcode](rear_panel.gcode) 1 part on a 30x60" piece of 1/4" baltic birch plywood. Cycle time 1 minute 49 seconds each.

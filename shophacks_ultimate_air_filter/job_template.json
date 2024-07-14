@@ -1,0 +1,103 @@
+{
+  "Fixtures": [
+    {
+      "G54": true
+    }
+  ],
+  "OrderOutputBy": "Fixture",
+  "Post": "mach3_mach4",
+  "PostArgs": "",
+  "SetupSheet": {
+    "ClearanceHeightExpression": "OpStockZMax+${SetupSheet}.ClearanceHeightOffset",
+    "ClearanceHeightOffset": "0.1969 in",
+    "CoolantMode": "None",
+    "FinalDepthExpression": "OpFinalDepth",
+    "HorizRapid": "1000.0000 in/min",
+    "SafeHeightExpression": "OpStockZMax+${SetupSheet}.SafeHeightOffset",
+    "SafeHeightOffset": "0.1181 in",
+    "StartDepthExpression": "OpStartDepth",
+    "StepDownExpression": "OpToolDiameter",
+    "VertRapid": "300.0000 in/min"
+  },
+  "SplitOutput": false,
+  "Tolerance": "0.0",
+  "ToolController": [
+    {
+      "dir": "Forward",
+      "hfeed": "42.333333333333336 mm/s",
+      "hrapid": "423.3333333333333 mm/s",
+      "label": "SpeTool 1/4\" Downcut Carbide End Mill001",
+      "name": "SpeTool_1_4__Downcut_Carbide_End_Mill",
+      "nr": 2,
+      "speed": 12000.0,
+      "tool": {
+        "attribute": {},
+        "name": "SpeTool 1/4\" Downcut Carbide End Mill002",
+        "parameter": {
+          "Chipload": "0.0000 in",
+          "CuttingEdgeHeight": "1.0000 in",
+          "Diameter": "0.2500 in",
+          "Flutes": "2",
+          "Length": "2.5000 in",
+          "Material": "Carbide",
+          "ShankDiameter": "0.2500 in",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "12.7 mm/s",
+      "vrapid": "127.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "42.333333333333336 mm/s",
+      "hrapid": "423.3333333333333 mm/s",
+      "label": "SpeTool 3/16\" Downcut Carbide End Mill001",
+      "name": "SpeTool_3_16__Downcut_Carbide_End_Mill",
+      "nr": 3,
+      "speed": 12000.0,
+      "tool": {
+        "attribute": {},
+        "name": "SpeTool 3/16\" Downcut Carbide End Mill",
+        "parameter": {
+          "Chipload": "0.0000 in",
+          "CuttingEdgeHeight": "1.0000 in",
+          "Diameter": "0.1870 in",
+          "Flutes": "2",
+          "Length": "2.5000 in",
+          "Material": "Carbide",
+          "ShankDiameter": "0.2500 in",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "8.466666666666667 mm/s",
+      "vrapid": "127.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    }
+  ],
+  "Version": 1
+}
